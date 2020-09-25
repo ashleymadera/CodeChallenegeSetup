@@ -15,13 +15,12 @@ let currentCatTax = 0;
 // 7) Both the amountOwed and pay amount button should be updated every time the calculate cat tax button is clicked.
 
 function calcButtonClick() {
-  const randomNumber = Math.floor(Math.random() * Math.floor(20));
-
-  if (randomNumber != 0) {
-    amountOwed.innerText = `You owe ${randomNumber} cat tax! Pay up!`;
+  currentCatTax = Math.floor(Math.random() * Math.floor(20));
+  if (currentCatTax != 0) {
+    amountOwed.innerText = `You owe ${currentCatTax} cat tax! Pay up!`;
     payBtn.innerText = "Pay Cat Tax";
   } else {
-    amountOwed.innerText = `You owe ${randomNumber} cat tax! You've escaped this time!`;
+    amountOwed.innerText = `You owe ${currentCatTax} cat tax! You've escaped this time!`;
   }
 }
 
@@ -34,6 +33,19 @@ function calcButtonClick() {
 // 5) Once the cat image is retrieved, append the image to the image container
 // 6) If the cat wax was not payable (amount was less than or equal to 0) when the button was clicked, replace the entire contents of the container with the gif found here (https://gfycat.com/snivelingbeautifuljoey-cat)
 
-function payButton() {}
+function payButton() {
+  if (currentCatTax > 0) {
+    currentCatTax -= 1;
+    if (currentCatTax <= 0) {
+      amountOwed.innerText = "Your debts are paid...";
+    } else {
+      amountOwed.innerText = `You still owe ${currentCatTax} cat tax! Pay up!`;
+    }
+  }
+}
 
 //refernce : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
+
+// if (currentCatTax <= 0) {
+//   amountOwed.innerText = "Your debts are paid...";
+// }
