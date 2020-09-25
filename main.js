@@ -1,3 +1,5 @@
+let calculateBtn = document.getElementsByClassName("calculateBtn");
+
 //Global currentCatTax variable
 let currentCatTax = 0;
 
@@ -10,8 +12,11 @@ let currentCatTax = 0;
 // 5) If the random number is 0, update the amountOwed div to display "You owe {random number} cat tax! You've escaped this time!"
 // 6) If the random number is 0, update the pay button so that it is hidden.
 // 7) Both the amountOwed and pay amount button should be updated every time the calculate cat tax button is clicked.
+function calcButtonClick() {
+  return Math.floor(Math.random() * Math.floor(20));
+}
 
-function calcButtonClick() {}
+console.log(calcButtonClick());
 
 // TODO: payButton function
 // Function should handle the following items:
@@ -23,3 +28,5 @@ function calcButtonClick() {}
 // 6) If the cat wax was not payable (amount was less than or equal to 0) when the button was clicked, replace the entire contents of the container with the gif found here (https://gfycat.com/snivelingbeautifuljoey-cat)
 
 function payButton() {}
+
+//refernce : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math/random
