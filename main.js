@@ -13,29 +13,17 @@ let currentCatTax = 0;
 // 5) If the random number is 0, update the amountOwed div to display "You owe {random number} cat tax! You've escaped this time!"
 // 6) If the random number is 0, update the pay button so that it is hidden.
 // 7) Both the amountOwed and pay amount button should be updated every time the calculate cat tax button is clicked.
+
 function calcButtonClick() {
   const randomNumber = Math.floor(Math.random() * Math.floor(20));
 
   if (randomNumber != 0) {
-    var owedMoneys = document.createTextNode(`Pay ${randomNumber}`);
-    console.log(amountOwed);
-
-    amountOwed.appendChild(owedMoneys);
-    const showCatTaxBtn = document.createTextNode("Pay Cat Tax");
-    payBtn.appendChild(showCatTaxBtn);
-  } /*
-  else
-  {
-    const noMoneysOwed = document.createTextNode(
-      `You owe ${randomNumber} cat tax! You've escaped this time!`
-    );
-    amountOwed.appendChild(noMoneysOwed);
-  }*/
+    amountOwed.innerText = `You owe ${randomNumber} cat tax! Pay up!`;
+    payBtn.innerText = "Pay Cat Tax";
+  } else {
+    amountOwed.innerText = `You owe ${randomNumber} cat tax! You've escaped this time!`;
+  }
 }
-
-// console.log(calcButtonClick());
-
-//calculateBtn.addEventListener("click", calcButtonClick());
 
 // TODO: payButton function
 // Function should handle the following items:
