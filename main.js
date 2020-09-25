@@ -1,7 +1,5 @@
-console.log("hello");
-
 let calculateBtn = document.querySelector(".calculateBtn");
-let amountOwed = document.querySelector("#amountOwed");
+let amountOwed = document.getElementById("amountOwed");
 let payBtn = document.querySelector(".payBtn");
 //Global currentCatTax variable
 let currentCatTax = 0;
@@ -17,23 +15,27 @@ let currentCatTax = 0;
 // 7) Both the amountOwed and pay amount button should be updated every time the calculate cat tax button is clicked.
 function calcButtonClick() {
   const randomNumber = Math.floor(Math.random() * Math.floor(20));
+
   if (randomNumber != 0) {
-    const owedMoneys = document.createTextNode(
-      `You owe ${randomNumber} cat tax! Pay up!`
-    );
+    var owedMoneys = document.createTextNode(`Pay ${randomNumber}`);
+    console.log(amountOwed);
+
     amountOwed.appendChild(owedMoneys);
     const showCatTaxBtn = document.createTextNode("Pay Cat Tax");
     payBtn.appendChild(showCatTaxBtn);
-  } else {
+  } /*
+  else
+  {
     const noMoneysOwed = document.createTextNode(
       `You owe ${randomNumber} cat tax! You've escaped this time!`
     );
     amountOwed.appendChild(noMoneysOwed);
-  }
+  }*/
 }
 
 // console.log(calcButtonClick());
-// calculateBtn.addEventListener("click", calcButtonClick());
+
+//calculateBtn.addEventListener("click", calcButtonClick());
 
 // TODO: payButton function
 // Function should handle the following items:
